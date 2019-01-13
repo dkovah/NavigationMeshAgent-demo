@@ -1,0 +1,501 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://addons/NavigationMeshAgent/snma_node.gd" type="Script" id=1]
+[ext_resource path="res://addons/NavigationMeshAgent/icon.png" type="Texture" id=2]
+[ext_resource path="res://KinematicBody.gd" type="Script" id=3]
+[ext_resource path="res://StaticBody2.gd" type="Script" id=4]
+
+[sub_resource type="BoxShape" id=1]
+
+extents = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 0.0546875, 1, 0, 1 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 0.0
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = false
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+_sections_unfolded = [ "Albedo" ]
+
+[sub_resource type="CubeMesh" id=3]
+
+material = SubResource( 2 )
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector3( 2, 2, 2 )
+subdivide_width = 0
+subdivide_height = 0
+subdivide_depth = 0
+
+[sub_resource type="SphereMesh" id=4]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+radius = 1.0
+height = 2.0
+radial_segments = 64
+rings = 32
+is_hemisphere = false
+
+[sub_resource type="BoxShape" id=5]
+
+extents = Vector3( 1, 1, 1 )
+
+[sub_resource type="CubeMesh" id=6]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector3( 2, 2, 2 )
+subdivide_width = 0
+subdivide_height = 0
+subdivide_depth = 0
+
+[sub_resource type="NavigationMesh" id=7]
+
+vertices = PoolVector3Array( -35.8575, 1.34457, -41.2605, -43.6575, 1.34457, -41.2605, -43.6575, 1.34457, -33.1605, -43.6575, 1.34457, -33.1605, -43.6575, 1.34457, -25.0605, -35.8575, 1.34457, -25.0605, -35.8575, 1.34457, -41.2605, -43.6575, 1.34457, -33.1605, -35.8575, 1.34457, -25.0605, -28.0575, 1.34457, -25.0605, -28.0575, 1.34457, -41.2605, 3.74246, 1.34457, -25.0605, 11.5425, 1.34457, -25.0605, 11.5425, 1.34457, -41.2605, 3.74246, 1.34457, -41.2605, -4.35754, 1.34457, -41.2605, -12.1575, 1.34457, -41.2605, -12.1575, 1.34457, -25.0605, -4.35754, 1.34457, -25.0605, -20.2575, 1.34457, -41.2605, -28.0575, 1.34457, -41.2605, -28.0575, 1.34457, -25.0605, -20.2575, 1.34457, -25.0605, -12.1575, 1.34457, -41.2605, -20.2575, 1.34457, -41.2605, -20.2575, 1.34457, -25.0605, -12.1575, 1.34457, -25.0605, 19.6425, 1.34457, -25.0605, 19.6425, 1.34457, -41.2605, 11.5425, 1.34457, -41.2605, 11.5425, 1.34457, -25.0605, -4.35754, 1.34457, -25.0605, 3.74246, 1.34457, -25.0605, 3.74246, 1.34457, -41.2605, -4.35754, 1.34457, -41.2605, 43.6425, 1.34457, -31.9605, 43.6425, 1.34457, -41.2605, 31.6425, 1.34457, -41.2605, 19.6425, 1.34457, -41.2605, 19.6425, 1.34457, -25.0605, 22.0425, 1.34457, -25.0605, 31.6425, 1.34457, -41.2605, 31.6425, 1.34457, -41.2605, 22.0425, 1.34457, -25.0605, 22.3425, 1.34457, -22.6605, 43.6425, 1.34457, -22.6605, 43.6425, 1.34457, -31.9605, -89.2575, 8.14457, -23.8605, -89.2575, 8.14457, -21.4605, -82.3575, 8.14457, -21.4605, -82.3575, 8.14457, -23.8605, -75.4575, 8.14457, -23.8605, -82.3575, 8.14457, -23.8605, -82.3575, 8.14457, -21.4605, -75.4575, 8.14457, -21.4605, 14.2425, 8.14457, -21.4605, 21.1425, 8.14457, -21.4605, 21.1425, 8.14457, -23.8605, 14.2425, 8.14457, -23.8605, -68.5575, 8.14457, -23.8605, -75.4575, 8.14457, -23.8605, -75.4575, 8.14457, -21.4605, -68.5575, 8.14457, -21.4605, 7.34246, 8.14457, -21.4605, 14.2425, 8.14457, -21.4605, 14.2425, 8.14457, -23.8605, 7.34246, 8.14457, -23.8605, -61.6575, 8.14457, -23.8605, -68.5575, 8.14457, -23.8605, -68.5575, 8.14457, -21.4605, -61.6575, 8.14457, -21.4605, 0.442459, 8.14457, -21.4605, 7.34246, 8.14457, -21.4605, 7.34246, 8.14457, -23.8605, 0.442459, 8.14457, -23.8605, -54.7575, 8.14457, -23.8605, -61.6575, 8.14457, -23.8605, -61.6575, 8.14457, -21.4605, -54.7575, 8.14457, -21.4605, -6.45754, 8.14457, -21.4605, 0.442459, 8.14457, -21.4605, 0.442459, 8.14457, -23.8605, -6.45754, 8.14457, -23.8605, -47.8575, 8.14457, -23.8605, -54.7575, 8.14457, -23.8605, -54.7575, 8.14457, -21.4605, -47.8575, 8.14457, -21.4605, -13.3575, 8.14457, -21.4605, -6.45754, 8.14457, -21.4605, -6.45754, 8.14457, -23.8605, -13.3575, 8.14457, -23.8605, -40.9575, 8.14457, -23.8605, -47.8575, 8.14457, -23.8605, -47.8575, 8.14457, -21.4605, -40.9575, 8.14457, -21.4605, -20.2575, 8.14457, -21.4605, -13.3575, 8.14457, -21.4605, -13.3575, 8.14457, -23.8605, -20.2575, 8.14457, -23.8605, -34.0575, 8.14457, -23.8605, -40.9575, 8.14457, -23.8605, -40.9575, 8.14457, -21.4605, -34.0575, 8.14457, -21.4605, -27.1575, 8.14457, -21.4605, -20.2575, 8.14457, -21.4605, -20.2575, 8.14457, -23.8605, -27.1575, 8.14457, -23.8605, -27.1575, 8.14457, -23.8605, -34.0575, 8.14457, -23.8605, -34.0575, 8.14457, -21.4605, -27.1575, 8.14457, -21.4605, -43.6575, 1.34457, -23.5605, -43.6575, 1.34457, -21.7605, -35.8575, 1.34457, -21.7605, -35.8575, 1.34457, -23.5605, -11.5575, 1.34457, -21.7605, -3.45754, 1.34457, -21.7605, -3.45754, 1.34457, -23.5605, -11.5575, 1.34457, -23.5605, 12.7425, 1.34457, -21.7605, 20.8425, 1.34457, -21.7605, 20.8425, 1.34457, -23.5605, 12.7425, 1.34457, -23.5605, -27.7575, 1.34457, -23.5605, -35.8575, 1.34457, -23.5605, -35.8575, 1.34457, -21.7605, -27.7575, 1.34457, -21.7605, 4.64246, 1.34457, -21.7605, 12.7425, 1.34457, -21.7605, 12.7425, 1.34457, -23.5605, 4.64246, 1.34457, -23.5605, -19.6575, 1.34457, -23.5605, -27.7575, 1.34457, -23.5605, -27.7575, 1.34457, -21.7605, -19.6575, 1.34457, -21.7605, -3.45754, 1.34457, -21.7605, 4.64246, 1.34457, -21.7605, 4.64246, 1.34457, -23.5605, -3.45754, 1.34457, -23.5605, -11.5575, 1.34457, -23.5605, -19.6575, 1.34457, -23.5605, -19.6575, 1.34457, -21.7605, -11.5575, 1.34457, -21.7605, 22.0425, 1.34457, -20.2605, 19.6425, 1.34457, -20.2605, 19.6425, 1.34457, -7.0605, 31.6425, 1.34457, -7.0605, 31.6425, 1.34457, -7.0605, 43.6425, 1.34457, -7.0605, 43.6425, 1.34457, -14.8605, 22.3425, 1.34457, -22.6605, 22.0425, 1.34457, -20.2605, 31.6425, 1.34457, -7.0605, 43.6425, 1.34457, -14.8605, 43.6425, 1.34457, -22.6605, -37.3575, 1.34457, -20.2605, -43.6575, 1.34457, -20.2605, -43.6575, 1.34457, -11.2605, -20.5575, 1.34457, -6.7605, -17.8575, 1.34457, -7.0605, -17.8575, 1.34457, -20.2605, -24.4575, 1.34457, -20.2605, -43.6575, 1.34457, -1.9605, -19.9575, 1.34457, -2.2605, -20.5575, 1.34457, -2.5605, -30.7575, 1.34457, -20.2605, -37.3575, 1.34457, -20.2605, -43.6575, 1.34457, -11.2605, -20.5575, 1.34457, -6.7605, -24.4575, 1.34457, -20.2605, -30.7575, 1.34457, -20.2605, -43.6575, 1.34457, -11.2605, -43.6575, 1.34457, -1.9605, -20.5575, 1.34457, -2.5605, -8.55754, 1.34457, -20.2605, -17.8575, 1.34457, -20.2605, -17.8575, 1.34457, -7.0605, -8.55754, 1.34457, -7.0605, 10.0425, 1.34457, -7.0605, 19.6425, 1.34457, -7.0605, 19.6425, 1.34457, -20.2605, 10.0425, 1.34457, -20.2605, 0.742462, 1.34457, -20.2605, -8.55754, 1.34457, -20.2605, -8.55754, 1.34457, -7.0605, 0.742462, 1.34457, -7.0605, 0.742462, 1.34457, -7.0605, 10.0425, 1.34457, -7.0605, 10.0425, 1.34457, -20.2605, 0.742462, 1.34457, -20.2605, -19.3575, 8.14457, -5.8605, -19.3575, 8.14457, -3.4605, -12.4575, 8.14457, -3.4605, -12.4575, 8.14457, -5.8605, -5.55754, 8.14457, -5.8605, -12.4575, 8.14457, -5.8605, -12.4575, 8.14457, -3.4605, -5.55754, 8.14457, -3.4605, 84.1425, 8.14457, -3.4605, 91.0425, 8.14457, -3.4605, 91.0425, 8.14457, -5.8605, 84.1425, 8.14457, -5.8605, 1.34246, 8.14457, -5.8605, -5.55754, 8.14457, -5.8605, -5.55754, 8.14457, -3.4605, 1.34246, 8.14457, -3.4605, 77.2425, 8.14457, -3.4605, 84.1425, 8.14457, -3.4605, 84.1425, 8.14457, -5.8605, 77.2425, 8.14457, -5.8605, 8.24246, 8.14457, -5.8605, 1.34246, 8.14457, -5.8605, 1.34246, 8.14457, -3.4605, 8.24246, 8.14457, -3.4605, 70.3425, 8.14457, -3.4605, 77.2425, 8.14457, -3.4605, 77.2425, 8.14457, -5.8605, 70.3425, 8.14457, -5.8605, 15.1425, 8.14457, -5.8605, 8.24246, 8.14457, -5.8605, 8.24246, 8.14457, -3.4605, 15.1425, 8.14457, -3.4605, 63.4425, 8.14457, -3.4605, 70.3425, 8.14457, -3.4605, 70.3425, 8.14457, -5.8605, 63.4425, 8.14457, -5.8605, 22.0425, 8.14457, -5.8605, 15.1425, 8.14457, -5.8605, 15.1425, 8.14457, -3.4605, 22.0425, 8.14457, -3.4605, 56.5425, 8.14457, -3.4605, 63.4425, 8.14457, -3.4605, 63.4425, 8.14457, -5.8605, 56.5425, 8.14457, -5.8605, 28.9425, 8.14457, -5.8605, 22.0425, 8.14457, -5.8605, 22.0425, 8.14457, -3.4605, 28.9425, 8.14457, -3.4605, 49.6425, 8.14457, -3.4605, 56.5425, 8.14457, -3.4605, 56.5425, 8.14457, -5.8605, 49.6425, 8.14457, -5.8605, 35.8425, 8.14457, -5.8605, 28.9425, 8.14457, -5.8605, 28.9425, 8.14457, -3.4605, 35.8425, 8.14457, -3.4605, 42.7425, 8.14457, -3.4605, 49.6425, 8.14457, -3.4605, 49.6425, 8.14457, -5.8605, 42.7425, 8.14457, -5.8605, 42.7425, 8.14457, -5.8605, 35.8425, 8.14457, -5.8605, 35.8425, 8.14457, -3.4605, 42.7425, 8.14457, -3.4605, -19.0575, 1.34457, -5.5605, -19.0575, 1.34457, -3.7605, -11.2575, 1.34457, -3.7605, -11.2575, 1.34457, -5.5605, 35.5425, 1.34457, -3.7605, 43.6425, 1.34457, -3.7605, 43.6425, 1.34457, -5.5605, 35.5425, 1.34457, -5.5605, -3.45754, 1.34457, -5.5605, -11.2575, 1.34457, -5.5605, -11.2575, 1.34457, -3.7605, -3.45754, 1.34457, -3.7605, 27.7425, 1.34457, -3.7605, 35.5425, 1.34457, -3.7605, 35.5425, 1.34457, -5.5605, 27.7425, 1.34457, -5.5605, 4.34246, 1.34457, -5.5605, -3.45754, 1.34457, -5.5605, -3.45754, 1.34457, -3.7605, 4.34246, 1.34457, -3.7605, 19.9425, 1.34457, -3.7605, 27.7425, 1.34457, -3.7605, 27.7425, 1.34457, -5.5605, 19.9425, 1.34457, -5.5605, 12.1425, 1.34457, -5.5605, 4.34246, 1.34457, -5.5605, 4.34246, 1.34457, -3.7605, 12.1425, 1.34457, -3.7605, 12.1425, 1.34457, -3.7605, 19.9425, 1.34457, -3.7605, 19.9425, 1.34457, -5.5605, 12.1425, 1.34457, -5.5605, -43.6575, 1.34457, 8.2395, -43.6575, 1.34457, 18.4395, -37.6575, 1.34457, 18.4395, -43.6575, 1.34457, 8.2395, -37.6575, 1.34457, 18.4395, -31.3575, 1.34457, 18.4395, -18.7575, 1.34457, 18.4395, -18.4575, 1.34457, -2.2605, -19.9575, 1.34457, -2.2605, -43.6575, 1.34457, -1.9605, -43.6575, 1.34457, 8.2395, -25.0575, 1.34457, 18.4395, -43.6575, 1.34457, 8.2395, -31.3575, 1.34457, 18.4395, -25.0575, 1.34457, 18.4395, -18.4575, 1.34457, -2.2605, -18.7575, 1.34457, 18.4395, -8.55754, 1.34457, 18.4395, -8.25754, 1.34457, -2.2605, 1.94246, 1.34457, 18.4395, 2.24246, 1.34457, -2.2605, -8.25754, 1.34457, -2.2605, -8.55754, 1.34457, 18.4395, 43.6425, 1.34457, 8.5395, 43.6425, 1.34457, -2.2605, 33.1425, 1.34457, -2.2605, 32.8425, 1.34457, 41.2395, 43.6425, 1.34457, 41.2395, 43.6425, 1.34457, 30.1395, 4.04246, 1.34457, 22.9395, 1.34246, 1.34457, 23.2395, 1.34246, 1.34457, 41.2395, 11.8425, 1.34457, 41.2395, 22.9425, 1.34457, -2.2605, 12.4425, 1.34457, -2.2605, 4.04246, 1.34457, 18.7395, 2.24246, 1.34457, -2.2605, 1.94246, 1.34457, 18.4395, 4.04246, 1.34457, 18.7395, 12.4425, 1.34457, -2.2605, 4.04246, 1.34457, 18.7395, 11.8425, 1.34457, 41.2395, 22.3425, 1.34457, 41.2395, 43.6425, 1.34457, 30.1395, 43.6425, 1.34457, 19.3395, 22.9425, 1.34457, -2.2605, 43.6425, 1.34457, 8.5395, 33.1425, 1.34457, -2.2605, 22.9425, 1.34457, -2.2605, 43.6425, 1.34457, 19.3395, 4.04246, 1.34457, 18.7395, 4.04246, 1.34457, 22.9395, 11.8425, 1.34457, 41.2395, 22.3425, 1.34457, 41.2395, 32.8425, 1.34457, 41.2395, 43.6425, 1.34457, 30.1395, -107.258, 8.14457, 19.6395, -107.258, 8.14457, 22.0395, -100.658, 8.14457, 22.0395, -100.658, 8.14457, 19.6395, -52.3575, 8.14457, 22.0395, -45.4575, 8.14457, 22.0395, -45.4575, 8.14457, 19.6395, -52.3575, 8.14457, 19.6395, -4.05754, 8.14457, 22.0395, 2.84246, 8.14457, 22.0395, 2.84246, 8.14457, 19.6395, -4.05754, 8.14457, 19.6395, -93.7575, 8.14457, 19.6395, -100.658, 8.14457, 19.6395, -100.658, 8.14457, 22.0395, -93.7575, 8.14457, 22.0395, -10.9575, 8.14457, 22.0395, -4.05754, 8.14457, 22.0395, -4.05754, 8.14457, 19.6395, -10.9575, 8.14457, 19.6395, -86.8575, 8.14457, 19.6395, -93.7575, 8.14457, 19.6395, -93.7575, 8.14457, 22.0395, -86.8575, 8.14457, 22.0395, -17.8575, 8.14457, 22.0395, -10.9575, 8.14457, 22.0395, -10.9575, 8.14457, 19.6395, -17.8575, 8.14457, 19.6395, -79.9575, 8.14457, 19.6395, -86.8575, 8.14457, 19.6395, -86.8575, 8.14457, 22.0395, -79.9575, 8.14457, 22.0395, -24.7575, 8.14457, 22.0395, -17.8575, 8.14457, 22.0395, -17.8575, 8.14457, 19.6395, -24.7575, 8.14457, 19.6395, -73.0575, 8.14457, 19.6395, -79.9575, 8.14457, 19.6395, -79.9575, 8.14457, 22.0395, -73.0575, 8.14457, 22.0395, -31.6575, 8.14457, 22.0395, -24.7575, 8.14457, 22.0395, -24.7575, 8.14457, 19.6395, -31.6575, 8.14457, 19.6395, -66.1575, 8.14457, 19.6395, -73.0575, 8.14457, 19.6395, -73.0575, 8.14457, 22.0395, -66.1575, 8.14457, 22.0395, -38.5575, 8.14457, 22.0395, -31.6575, 8.14457, 22.0395, -31.6575, 8.14457, 19.6395, -38.5575, 8.14457, 19.6395, -59.2575, 8.14457, 19.6395, -66.1575, 8.14457, 19.6395, -66.1575, 8.14457, 22.0395, -59.2575, 8.14457, 22.0395, -45.4575, 8.14457, 22.0395, -38.5575, 8.14457, 22.0395, -38.5575, 8.14457, 19.6395, -45.4575, 8.14457, 19.6395, -52.3575, 8.14457, 19.6395, -59.2575, 8.14457, 19.6395, -59.2575, 8.14457, 22.0395, -52.3575, 8.14457, 22.0395, -43.6575, 1.34457, 19.9395, -43.6575, 1.34457, 21.7395, -32.2575, 1.34457, 21.7395, -32.2575, 1.34457, 19.9395, -9.15754, 1.34457, 19.9395, -20.5575, 1.34457, 19.9395, -20.5575, 1.34457, 21.7395, -9.15754, 1.34457, 21.7395, -9.15754, 1.34457, 21.7395, 2.54246, 1.34457, 21.7395, 2.54246, 1.34457, 19.9395, -9.15754, 1.34457, 19.9395, -20.5575, 1.34457, 19.9395, -32.2575, 1.34457, 19.9395, -32.2575, 1.34457, 21.7395, -20.5575, 1.34457, 21.7395, -32.5575, 1.34457, 23.2395, -43.6575, 1.34457, 23.2395, -43.6575, 1.34457, 32.2395, -43.6575, 1.34457, 32.2395, -43.6575, 1.34457, 41.2395, -32.5575, 1.34457, 41.2395, -32.5575, 1.34457, 23.2395, -43.6575, 1.34457, 32.2395, -32.5575, 1.34457, 41.2395, -21.1575, 1.34457, 41.2395, -21.1575, 1.34457, 23.2395, 1.34246, 1.34457, 41.2395, 1.34246, 1.34457, 23.2395, -10.0575, 1.34457, 23.2395, -10.0575, 1.34457, 41.2395, -21.1575, 1.34457, 41.2395, -10.0575, 1.34457, 41.2395, -10.0575, 1.34457, 23.2395, -21.1575, 1.34457, 23.2395 )
+polygons = [ PoolIntArray( 2, 0, 1 ), PoolIntArray( 5, 3, 4 ), PoolIntArray( 10, 6, 9 ), PoolIntArray( 6, 8, 9 ), PoolIntArray( 6, 7, 8 ), PoolIntArray( 14, 11, 13 ), PoolIntArray( 11, 12, 13 ), PoolIntArray( 18, 15, 17 ), PoolIntArray( 15, 16, 17 ), PoolIntArray( 22, 19, 21 ), PoolIntArray( 19, 20, 21 ), PoolIntArray( 26, 23, 25 ), PoolIntArray( 23, 24, 25 ), PoolIntArray( 30, 27, 29 ), PoolIntArray( 27, 28, 29 ), PoolIntArray( 34, 31, 33 ), PoolIntArray( 31, 32, 33 ), PoolIntArray( 37, 35, 36 ), PoolIntArray( 41, 38, 40 ), PoolIntArray( 38, 39, 40 ), PoolIntArray( 46, 42, 45 ), PoolIntArray( 42, 43, 45 ), PoolIntArray( 43, 44, 45 ), PoolIntArray( 50, 47, 49 ), PoolIntArray( 47, 48, 49 ), PoolIntArray( 54, 51, 53 ), PoolIntArray( 51, 52, 53 ), PoolIntArray( 58, 55, 57 ), PoolIntArray( 55, 56, 57 ), PoolIntArray( 62, 59, 61 ), PoolIntArray( 59, 60, 61 ), PoolIntArray( 66, 63, 65 ), PoolIntArray( 63, 64, 65 ), PoolIntArray( 70, 67, 69 ), PoolIntArray( 67, 68, 69 ), PoolIntArray( 74, 71, 73 ), PoolIntArray( 71, 72, 73 ), PoolIntArray( 78, 75, 77 ), PoolIntArray( 75, 76, 77 ), PoolIntArray( 82, 79, 81 ), PoolIntArray( 79, 80, 81 ), PoolIntArray( 86, 83, 85 ), PoolIntArray( 83, 84, 85 ), PoolIntArray( 90, 87, 89 ), PoolIntArray( 87, 88, 89 ), PoolIntArray( 94, 91, 93 ), PoolIntArray( 91, 92, 93 ), PoolIntArray( 98, 95, 97 ), PoolIntArray( 95, 96, 97 ), PoolIntArray( 102, 99, 101 ), PoolIntArray( 99, 100, 101 ), PoolIntArray( 106, 103, 105 ), PoolIntArray( 103, 104, 105 ), PoolIntArray( 110, 107, 109 ), PoolIntArray( 107, 108, 109 ), PoolIntArray( 114, 111, 113 ), PoolIntArray( 111, 112, 113 ), PoolIntArray( 118, 115, 117 ), PoolIntArray( 115, 116, 117 ), PoolIntArray( 122, 119, 121 ), PoolIntArray( 119, 120, 121 ), PoolIntArray( 126, 123, 125 ), PoolIntArray( 123, 124, 125 ), PoolIntArray( 130, 127, 129 ), PoolIntArray( 127, 128, 129 ), PoolIntArray( 134, 131, 133 ), PoolIntArray( 131, 132, 133 ), PoolIntArray( 138, 135, 137 ), PoolIntArray( 135, 136, 137 ), PoolIntArray( 142, 139, 141 ), PoolIntArray( 139, 140, 141 ), PoolIntArray( 146, 143, 145 ), PoolIntArray( 143, 144, 145 ), PoolIntArray( 149, 147, 148 ), PoolIntArray( 154, 150, 153 ), PoolIntArray( 150, 151, 153 ), PoolIntArray( 151, 152, 153 ), PoolIntArray( 157, 155, 156 ), PoolIntArray( 161, 158, 160 ), PoolIntArray( 158, 159, 160 ), PoolIntArray( 164, 162, 163 ), PoolIntArray( 167, 165, 166 ), PoolIntArray( 173, 168, 172 ), PoolIntArray( 168, 171, 172 ), PoolIntArray( 168, 170, 171 ), PoolIntArray( 168, 169, 170 ), PoolIntArray( 177, 174, 176 ), PoolIntArray( 174, 175, 176 ), PoolIntArray( 181, 178, 180 ), PoolIntArray( 178, 179, 180 ), PoolIntArray( 185, 182, 184 ), PoolIntArray( 182, 183, 184 ), PoolIntArray( 189, 186, 188 ), PoolIntArray( 186, 187, 188 ), PoolIntArray( 193, 190, 192 ), PoolIntArray( 190, 191, 192 ), PoolIntArray( 197, 194, 196 ), PoolIntArray( 194, 195, 196 ), PoolIntArray( 201, 198, 200 ), PoolIntArray( 198, 199, 200 ), PoolIntArray( 205, 202, 204 ), PoolIntArray( 202, 203, 204 ), PoolIntArray( 209, 206, 208 ), PoolIntArray( 206, 207, 208 ), PoolIntArray( 213, 210, 212 ), PoolIntArray( 210, 211, 212 ), PoolIntArray( 217, 214, 216 ), PoolIntArray( 214, 215, 216 ), PoolIntArray( 221, 218, 220 ), PoolIntArray( 218, 219, 220 ), PoolIntArray( 225, 222, 224 ), PoolIntArray( 222, 223, 224 ), PoolIntArray( 229, 226, 228 ), PoolIntArray( 226, 227, 228 ), PoolIntArray( 233, 230, 232 ), PoolIntArray( 230, 231, 232 ), PoolIntArray( 237, 234, 236 ), PoolIntArray( 234, 235, 236 ), PoolIntArray( 241, 238, 240 ), PoolIntArray( 238, 239, 240 ), PoolIntArray( 245, 242, 244 ), PoolIntArray( 242, 243, 244 ), PoolIntArray( 249, 246, 248 ), PoolIntArray( 246, 247, 248 ), PoolIntArray( 253, 250, 252 ), PoolIntArray( 250, 251, 252 ), PoolIntArray( 257, 254, 256 ), PoolIntArray( 254, 255, 256 ), PoolIntArray( 261, 258, 260 ), PoolIntArray( 258, 259, 260 ), PoolIntArray( 265, 262, 264 ), PoolIntArray( 262, 263, 264 ), PoolIntArray( 269, 266, 268 ), PoolIntArray( 266, 267, 268 ), PoolIntArray( 273, 270, 272 ), PoolIntArray( 270, 271, 272 ), PoolIntArray( 277, 274, 276 ), PoolIntArray( 274, 275, 276 ), PoolIntArray( 281, 278, 280 ), PoolIntArray( 278, 279, 280 ), PoolIntArray( 285, 282, 284 ), PoolIntArray( 282, 283, 284 ), PoolIntArray( 288, 286, 287 ), PoolIntArray( 291, 289, 290 ), PoolIntArray( 297, 292, 296 ), PoolIntArray( 292, 295, 296 ), PoolIntArray( 292, 294, 295 ), PoolIntArray( 292, 293, 294 ), PoolIntArray( 300, 298, 299 ), PoolIntArray( 304, 301, 303 ), PoolIntArray( 301, 302, 303 ), PoolIntArray( 308, 305, 307 ), PoolIntArray( 305, 306, 307 ), PoolIntArray( 311, 309, 310 ), PoolIntArray( 314, 312, 313 ), PoolIntArray( 318, 315, 317 ), PoolIntArray( 315, 316, 317 ), PoolIntArray( 321, 319, 320 ), PoolIntArray( 325, 322, 324 ), PoolIntArray( 322, 323, 324 ), PoolIntArray( 331, 326, 330 ), PoolIntArray( 326, 329, 330 ), PoolIntArray( 326, 328, 329 ), PoolIntArray( 326, 327, 328 ), PoolIntArray( 335, 332, 334 ), PoolIntArray( 332, 333, 334 ), PoolIntArray( 338, 336, 337 ), PoolIntArray( 341, 339, 340 ), PoolIntArray( 345, 342, 344 ), PoolIntArray( 342, 343, 344 ), PoolIntArray( 349, 346, 348 ), PoolIntArray( 346, 347, 348 ), PoolIntArray( 353, 350, 352 ), PoolIntArray( 350, 351, 352 ), PoolIntArray( 357, 354, 356 ), PoolIntArray( 354, 355, 356 ), PoolIntArray( 361, 358, 360 ), PoolIntArray( 358, 359, 360 ), PoolIntArray( 365, 362, 364 ), PoolIntArray( 362, 363, 364 ), PoolIntArray( 369, 366, 368 ), PoolIntArray( 366, 367, 368 ), PoolIntArray( 373, 370, 372 ), PoolIntArray( 370, 371, 372 ), PoolIntArray( 377, 374, 376 ), PoolIntArray( 374, 375, 376 ), PoolIntArray( 381, 378, 380 ), PoolIntArray( 378, 379, 380 ), PoolIntArray( 385, 382, 384 ), PoolIntArray( 382, 383, 384 ), PoolIntArray( 389, 386, 388 ), PoolIntArray( 386, 387, 388 ), PoolIntArray( 393, 390, 392 ), PoolIntArray( 390, 391, 392 ), PoolIntArray( 397, 394, 396 ), PoolIntArray( 394, 395, 396 ), PoolIntArray( 401, 398, 400 ), PoolIntArray( 398, 399, 400 ), PoolIntArray( 405, 402, 404 ), PoolIntArray( 402, 403, 404 ), PoolIntArray( 409, 406, 408 ), PoolIntArray( 406, 407, 408 ), PoolIntArray( 413, 410, 412 ), PoolIntArray( 410, 411, 412 ), PoolIntArray( 417, 414, 416 ), PoolIntArray( 414, 415, 416 ), PoolIntArray( 421, 418, 420 ), PoolIntArray( 418, 419, 420 ), PoolIntArray( 424, 422, 423 ), PoolIntArray( 427, 425, 426 ), PoolIntArray( 432, 428, 431 ), PoolIntArray( 428, 430, 431 ), PoolIntArray( 428, 429, 430 ), PoolIntArray( 436, 433, 435 ), PoolIntArray( 433, 434, 435 ), PoolIntArray( 440, 437, 439 ), PoolIntArray( 437, 438, 439 ) ]
+sample_partition_type/sample_partition_type = 0
+cell/size = 0.3
+cell/height = 0.2
+agent/height = 2.0
+agent/radius = 0.6
+agent/max_climb = 0.9
+agent/max_slope = 45.0
+region/min_size = 8.0
+region/merge_size = 20.0
+edge/max_length = 12.0
+edge/max_error = 1.3
+polygon/verts_per_poly = 6.0
+detail/sample_distance = 6.0
+detail/sample_max_error = 1.0
+filter/low_hanging_obstacles = false
+filter/ledge_spans = false
+filter/filter_walkable_low_height_spans = false
+
+[sub_resource type="SpatialMaterial" id=8]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 1, 0.0078125, 0.0078125, 1 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 0.0
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = false
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+_sections_unfolded = [ "Albedo" ]
+
+[node name="Spatial" type="Spatial" index="0"]
+
+[node name="Camera" type="Camera" parent="." index="0"]
+
+transform = Transform( 1, 0, 0, 0, 0.627578, 0.778553, 0, -0.778553, 0.627578, 0, 55.8872, 51.4428 )
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = false
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 100.0
+
+[node name="usage example 1" type="KinematicBody" parent="." index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.4468, 7.08484, 11.6884 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="usage example 1" index="0"]
+
+shape = SubResource( 1 )
+disabled = false
+
+[node name="MeshInstance" type="MeshInstance" parent="usage example 1" index="1"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 3 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="usage example 1" index="2"]
+
+transform = Transform( 0.504375, 0, 0, 0, 0.504375, 0, 0, 0, 0.47757, 0, 0, 3.43144 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 4 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="Agent" type="Spatial" parent="usage example 1" index="3"]
+
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+navigation = NodePath("../../Navigation")
+target = NodePath("../../simple player")
+follow = true
+rotate = true
+rotation_speed = 0.1
+accel = 2
+deaccel = 4
+max_speed = 20
+
+[node name="usage example 2" type="KinematicBody" parent="." index="2"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0982, 7.08484, -13.3899 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="usage example 2" index="0"]
+
+shape = SubResource( 1 )
+disabled = false
+
+[node name="MeshInstance" type="MeshInstance" parent="usage example 2" index="1"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 3 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="usage example 2" index="2"]
+
+transform = Transform( 0.504375, 0, 0, 0, 0.504375, 0, 0, 0, 0.47757, 0, 0, 3.43144 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 4 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="Navmesh" type="Spatial" parent="usage example 2" index="3"]
+
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+navigation = null
+target = null
+follow = true
+rotate = true
+rotation_speed = 0.1
+accel = 2
+deaccel = 4
+max_speed = 20
+
+[node name="simple player" type="StaticBody" parent="." index="3"]
+
+editor/display_folded = true
+transform = Transform( 2.51635, 0, 0, 0, 2.51635, 0, 0, 0, 2.51635, -27.8925, 0.99342, 2.02302 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+script = ExtResource( 4 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="simple player" index="0"]
+
+shape = SubResource( 5 )
+disabled = false
+
+[node name="MeshInstance" type="MeshInstance" parent="simple player" index="1"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 6 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="Navigation" type="Navigation" parent="." index="4"]
+
+up_vector = Vector3( 0, 1, 0 )
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation" index="0"]
+
+navmesh = SubResource( 7 )
+enabled = true
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance" index="0"]
+
+editor/display_folded = true
+transform = Transform( 44.2286, 0, 0, 0, 1, 0, 0, 0, 41.8605, 0, 0, 0 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/StaticBody" index="0"]
+
+shape = SubResource( 5 )
+disabled = false
+
+[node name="MeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance/StaticBody" index="1"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 6 )
+skeleton = NodePath("..")
+material/0 = SubResource( 8 )
+_sections_unfolded = [ "material" ]
+
+[node name="StaticBody5" type="StaticBody" parent="Navigation/NavigationMeshInstance" index="1"]
+
+editor/display_folded = true
+transform = Transform( 55.6273, 0, 0, 0, 9.97768, 0, 0, 0, 1.58821, -34.1489, -2.07775, -22.6839 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/StaticBody5" index="0"]
+
+shape = SubResource( 5 )
+disabled = false
+
+[node name="MeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance/StaticBody5" index="1"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 6 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="StaticBody6" type="StaticBody" parent="Navigation/NavigationMeshInstance" index="2"]
+
+editor/display_folded = true
+transform = Transform( 55.6273, 0, 0, 0, 9.97768, 0, 0, 0, 1.58821, 35.9378, -2.07775, -4.60132 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/StaticBody6" index="0"]
+
+shape = SubResource( 5 )
+disabled = false
+
+[node name="MeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance/StaticBody6" index="1"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 6 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="StaticBody7" type="StaticBody" parent="Navigation/NavigationMeshInstance" index="3"]
+
+editor/display_folded = true
+transform = Transform( 55.6273, 0, 0, 0, 9.97768, 0, 0, 0, 1.58821, -52.2303, -2.07775, 20.8274 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/StaticBody7" index="0"]
+
+shape = SubResource( 5 )
+disabled = false
+
+[node name="MeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance/StaticBody7" index="1"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 6 )
+skeleton = NodePath("..")
+material/0 = null
+
+
